@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="theme-color" content="#212D3B">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+  
+  <link rel="stylesheet" href="./img/iconsfont/iconsfont.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="./manifest.json">
+  <title>New TODO</title>
+</head>
+<body>
+
+ 
+<div class="wrapper">
+  <header class="header">
+    <div class="burger-btn">
+      <span class="burger-btn__bg"></span>
+      <span class="burger-btn__burger"></span>
+    </div>
+    <div class="categories">
+      <label class="category-wrapper">
+        <input checked type="radio" class="category__radio" name="category__radio">
+        <span class="category">
+          Мои задачи
+        </span>
+      </label>
+      <div class="add-list-btn category">
+        + Добавить список
+      </div>
+    </div>
+  </header>
+  
+  <div class="lists-slider">
+    <div class="lists-slider__con">
+      <div class="lists-slider__slide">
+        
+        <div class="main-list">
+          <div class="todo">
+            <label class="todo__checkbox-wrapper">
+              <input class="todo__checkbox" type="checkbox">
+              <span class="todo__checkbox-label"></span>
+            </label>
+            <p class="todo__text">Умом не блещет</p>
+          </div>
+          <div class="todo">
+            <label class="todo__checkbox-wrapper">
+              <input class="todo__checkbox" type="checkbox">
+              <span class="todo__checkbox-label"></span>
+            </label>
+            <p class="todo__text">Какая-то задача</p>
+          </div>
+        </div>
+        
+        <label class="completed-tasks__btn">
+          Выполненные задачи
+          <input class="completed-tasks__checkbox" type="checkbox">
+          <span class="completed-tasks__toggle"></span>
+        </label>
+        <div class="completed-tasks">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="left-menu__shadow-bg"></div>
+<div class="left-menu">
+  <span class="soon">Скоро!</span>
+</div>
+
+<div class="add-category-window__shadow-bg"></div>
+<div class="add-category-window">
+  <h3 class="add-category-window__title">
+    Добавить список
+  </h3>
+  <input class="add-category-window__input" type="text" maxlength="12" placeholder="Введите имя списка">
+  <div class="add-category-window__btns-con">
+    <button class="add-category-window__cancel red-btn">ОТМЕНИТЬ</button>
+    <button class="add-category-window__confirm blue-btn">ДОБАВИТЬ</button>
+  </div>
+</div>
+
+<input type="checkbox" class="add-todo-btn__checkbox" id="add-todo-btn__checkbox" />
+<label class="add-todo-btn" for="add-todo-btn__checkbox"></label>
+<label class="add-todo-btn__shadow" for="add-todo-btn__checkbox"></label>
+<div class="add-todo-window">
+  <div class="add-todo-window__input" placeholder="Новая задача"></div>
+  <div class="add-todo-window__btns-con">
+    <label class="add-todo-window__cancel red-btn" for="add-todo-btn__checkbox">ОТМЕНИТЬ</label>
+    <button class="add-todo-window__confirm blue-btn">СОХРАНИТЬ</button>
+  </div>
+</div>
+
+<div class="lists-context-menu__shadow-bg"></div>
+<div class="lists-context-menu">
+  <span class="lists-context-menu__btn
+                lists-context-menu__rename
+               icon-pencil">
+    Переименовать
+  </span>
+  <span class="lists-context-menu__btn
+               lists-context-menu__delete
+               icon-trash">
+    Удалить
+  </span>
+</div>
+
+<div class="rename-lists-window">
+  <h3 class="rename-lists-window__title">
+    Переименовать список
+  </h3>
+  <input class="rename-lists-window__input" type="text" maxlength="12" placeholder="Введите имя списка">
+  <div class="rename-lists-window__btns-con">
+    <button class="rename-lists-window__cancel red-btn">ОТМЕНИТЬ</button>
+    <button class="rename-lists-window__confirm blue-btn">СОХРАНИТЬ</button>
+  </div>
+</div>
+
+<div class="confirm-window">
+  <div class="confirm-window__title">Удалить список?</div>
+  <div class="confirm-window__buttons-con">
+    <div class="confirm-window__cancel">ОТМЕНИТЬ</div>
+    <div class="confirm-window__delete">УДАЛИТЬ</div>
+  </div>
+</div>
+
+  
+  
+<script src="main.js" type="module"></script>
+</body>
+</html>
