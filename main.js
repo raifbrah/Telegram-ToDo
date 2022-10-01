@@ -50,7 +50,7 @@ function hashChange() {
       window.removeEventListener('resize', addCatWindow_changeTop)
       categoriesJS.close()
       window.addEventListener('resize', addTodoBtn_changeTop)
-      addTodoBtn.style.top = '101vh'
+      addTodoBtn.style.top = '101%'
     } else if (forwardHistory === '#leftMenu' && location.hash !== '#leftMenu') {
       leftMenuJS.close()
     } else if (forwardHistory === '#addTodoBtn' && location.hash !== '#addTodoBtn') {
@@ -59,7 +59,7 @@ function hashChange() {
     } else if (forwardHistory === '#listsContextMenu' && location.hash !== '#listsContextMenu') {
       listsContextMenuJS.close()
       window.addEventListener('resize', addTodoBtn_changeTop)
-      addTodoBtn.style.top = '101vh'
+      addTodoBtn.style.top = '101%'
     }
   }
 }
@@ -67,7 +67,7 @@ function addCatWindow_changeTop() {
   addCategoryWindow.style.top = `${window.innerHeight / 2}px`
 }
 function addTodoBtn_changeTop() {
-  addTodoBtn.style.top = '101vh'
+  addTodoBtn.style.top = '101%'
 }
 function addTodoWindow_changeTop() {
   addTodoWindow.style.top = `${window.innerHeight}px`
