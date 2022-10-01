@@ -50,7 +50,7 @@ function hashChange() {
       window.removeEventListener('resize', addCatWindow_changeTop)
       categoriesJS.close()
       window.addEventListener('resize', addTodoBtn_changeTop)
-      addTodoBtn.style.top = `${window.innerHeight}px`
+      addTodoBtn.style.top = '101vh'
     } else if (forwardHistory === '#leftMenu' && location.hash !== '#leftMenu') {
       leftMenuJS.close()
     } else if (forwardHistory === '#addTodoBtn' && location.hash !== '#addTodoBtn') {
@@ -59,7 +59,7 @@ function hashChange() {
     } else if (forwardHistory === '#listsContextMenu' && location.hash !== '#listsContextMenu') {
       listsContextMenuJS.close()
       window.addEventListener('resize', addTodoBtn_changeTop)
-      addTodoBtn.style.top = `${window.innerHeight}px`
+      addTodoBtn.style.top = '101vh'
     }
   }
 }
