@@ -701,6 +701,12 @@ input[name="category__radio"]:checked + .category:before {
 .add-todo-window__input[placeholder]:empty:before {
   content: attr(placeholder);
   color: var(--gray-color);
+  
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 .add-todo-window__btns-con {
   display: flex;
