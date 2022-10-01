@@ -70,7 +70,7 @@ function addTodoBtn_changeTop() {
   addTodoBtn.style.top = '100%'
 }
 function addTodoWindow_changeTop() {
-  addTodoWindow.style.top = '100%'
+  addTodoWindow.style.top = '100vh'
 }
 
 addTodoBtn_changeTop()
