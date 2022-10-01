@@ -67,7 +67,7 @@ function addCatWindow_changeTop() {
   addCategoryWindow.style.top = `${window.innerHeight / 2}px`
 }
 function addTodoBtn_changeTop() {
-  addTodoBtn.style.top = `${window.innerHeight}px`
+  addTodoBtn.style.top = '101vh'
 }
 function addTodoWindow_changeTop() {
   addTodoWindow.style.top = `${window.innerHeight}px`
