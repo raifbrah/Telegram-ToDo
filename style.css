@@ -18,6 +18,13 @@ input, textarea {
   -ms-user-select: text;
   user-select: text;
 }
+[contenteditable] {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
 *::-webkit-scrollbar {
   display: none;
 }
