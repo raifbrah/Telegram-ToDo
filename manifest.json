@@ -1,6 +1,6 @@
 {
-  "name": "RaifBrah TODO",
-  "short_name": "RB TODO",
+  "name": "RaifBrah Telegram TODO",
+  "short_name": "Telegram TODO",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#212D3B",
