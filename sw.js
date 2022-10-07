@@ -19,9 +19,16 @@ const assetUrls = [
   './img/iconsfont/fonts/icons.svg',
   './img/iconsfont/fonts/icons.ttf',
   './img/iconsfont/fonts/icons.woff',
+  './img/logo/icon-48x48.png',
+  './img/logo/icon-72x72.png',
+  './img/logo/icon-96x96.png',
   './img/logo/icon-128x128.png',
   './img/logo/icon-144x144.png',
+  './img/logo/icon-152x152.png',
+  './img/logo/icon-192x192.png',
+  './img/logo/icon-384x384.png',
   './img/logo/icon-512x512.png',
+  './img/logo/favicon.ico'
 ]
 
 
