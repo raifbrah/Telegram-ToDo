@@ -3,8 +3,8 @@
   "short_name": "Telegram TODO",
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#212D3Bbb",
-  "background_color": "#212D3Bbb",
+  "theme_color": "#202b39",
+  "background_color": "#202b39",
   "orientation": "any",
   "icons": [
     {
