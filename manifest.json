@@ -1,6 +1,6 @@
 {
   "name": "Telegram TODO",
-  "short_name": "Telegram TODO",
+  "short_name": "ToDo",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#202b39",
