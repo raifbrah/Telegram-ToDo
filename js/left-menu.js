@@ -16,7 +16,7 @@ burgerBtn.onclick = () => {
   mainJS.locationHash('#leftMenu')
   open()
 }
-leftMenu__shadowBG.onclick = () => close()
+leftMenu__shadowBG.onclick = () => history.back()
 
 
 
@@ -58,7 +58,7 @@ function CheckAction() {
   var x = startPosition - currentPosition
   
   if (x > 100) {
-    close()
+    history.back()
   } else {
     open()
   }
@@ -91,6 +91,4 @@ export function close() {
   
   wrapper.style.transition = 'var(--left-menu_transition)'
   wrapper.style.transform = 'translate(0)'
-  
-  history.back()
 }
