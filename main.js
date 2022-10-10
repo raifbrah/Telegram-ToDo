@@ -27,6 +27,17 @@ export function locationHash(tag) {
   forwardHistory = tag
 }
 
+window.addEventListener("orientationchange", function() {
+  const category__radio = document.querySelectorAll('.category__radio')
+  for (let i=0; i<category__radio.length; i++) {
+    if (category__radio[i].checked === true) {
+      this.setTimeout(() => { 
+        category__radio[i].click()
+      }, 100)
+    }
+  }
+}, false);
+
 window.addEventListener('hashchange', hashChange)
 
 window.addEventListener('resize', () => {
