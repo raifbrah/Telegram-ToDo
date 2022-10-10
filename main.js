@@ -8,7 +8,7 @@ import * as addTodoWindowJS from './js/add-todo-window.js'
 import * as completedTasksJS from './js/completed-tasks.js'
 import * as deleteTodoJS from './js/delete-todo.js'
 import * as listsContextMenuJS from './js/lists-context-menu.js'
-import * as appJS from './app.js'
+//import * as appJS from './app.js'
 
 
 const addCategoryWindow = document.querySelector('.add-category-window')
@@ -19,7 +19,7 @@ const addTodoWindow = document.querySelector('.add-todo-window')
 const addTodoWindow__input = document.querySelector('.add-todo-window__input')
 
 
-
+console.log('test 2')
 
 let forwardHistory = ''
 export function locationHash(tag) {

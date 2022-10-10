@@ -1,4 +1,4 @@
-const staticCacheName = 's-app-v1'
+const staticCacheName = 's-app-v2'
 const dynamicCacheName = 'd-app-v1'
 
 const assetUrls = [
@@ -75,6 +75,6 @@ async function networkFirst(request) {
     return response
   } catch (e) {
     const cached = await cache.match(request)
-    return cached ?? await caches.match('/offline.html')
+    return cached ?? await caches.match('./offline.html')
   }
 }
