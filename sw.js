@@ -1,4 +1,4 @@
-const staticCacheName = 's-app-v2'
+const staticCacheName = 's-app-v1'
 const dynamicCacheName = 'd-app-v1'
 
 const assetUrls = [
@@ -41,12 +41,12 @@ self.addEventListener('install', async event => {
 })
 
 self.addEventListener('activate', async event => {
-  const cacheName = await caches.keys()
+  const cacheNames = await caches.keys()
   await Promise.all(
-    cacheName
+    cacheNames
       .filter(name => name !== staticCacheName)
       .filter(name => name !== dynamicCacheName)
-      .map(name => cache.delete(name))
+      .map(name => caches.delete(name))
   )
 })
 
@@ -55,17 +55,17 @@ self.addEventListener('fetch', event => {
 
   const url = new URL(request.url)
   if (url.origin === location.origin) {
-    event.respondWith(cacheFirst(event.request))
+    event.respondWith(cacheFirst(request))
   } else {
     event.respondWith(networkFirst(request))
   }
 })
 
+
 async function cacheFirst(request) {
   const cached = await caches.match(request)
   return cached ?? await fetch(request)
 }
-
 
 async function networkFirst(request) {
   const cache = await caches.open(dynamicCacheName)
@@ -75,6 +75,6 @@ async function networkFirst(request) {
     return response
   } catch (e) {
     const cached = await cache.match(request)
-    return cached ?? await caches.match('./offline.html')
+    return cached ?? await caches.match('/offline.html')
   }
 }
