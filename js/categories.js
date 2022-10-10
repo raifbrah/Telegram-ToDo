@@ -179,13 +179,11 @@ export function listsSlider_switch(count) {
   
   for (let i=0; i < categoryRadios.length; i++) {
     categoryRadios[i].onclick = () => {
-      //listsSlider__con.style.transform = `translateX(-${window.innerWidth * i}px)`
       listsSlider__con.style.transform = `translateX(calc(-100vw * ${i}))`
     }
   }
   
   if (count > 0) {
-    //listsSlider__con.style.transform = `translateX(-${window.innerWidth * count}px)`
     listsSlider__con.style.transform = `translateX(calc(-100vw * ${count}))`
   }
 }
