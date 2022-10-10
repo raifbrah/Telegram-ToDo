@@ -11,6 +11,9 @@
  	scrollbar-width: none;
  	-ms-overflow-style: none;
 }
+label {
+  -webkit-tap-highlight-color:transparent;
+}
 input, textarea {
   -webkit-user-select: text;
   -khtml-user-select: text;
@@ -19,11 +22,11 @@ input, textarea {
   user-select: text;
 }
 [contenteditable] {
-    -webkit-user-select: text;
-    -khtml-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 *::-webkit-scrollbar {
   display: none;
