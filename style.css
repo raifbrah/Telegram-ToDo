@@ -75,6 +75,7 @@ body {
   height: var(--header_height);
   
   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   background: #212D3Bbb;
   box-shadow: 0 0 5px #0003;
 }
