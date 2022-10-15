@@ -3,8 +3,8 @@
   "short_name": "ToDo",
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "#202b39",
-  "background_color": "#202b39",
+  "theme_color": "#1e2a37",
+  "background_color": "#1e2a37",
   "orientation": "any",
   "icons": [
     {
