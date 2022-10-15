@@ -600,7 +600,7 @@ input[name="category__radio"]:checked + .category:before {
   left: 50vw;
   width: 57px;
   height: 57px;
-  transform: translate(-50%, -120%);
+  transform: translate(-50%, calc(-100% - 20px));
   transform-origin: bottom;
   
   background: #5EA3DE;
@@ -628,7 +628,7 @@ input[name="category__radio"]:checked + .category:before {
   display: none;
 }
 .add-todo-btn__checkbox:checked + .add-todo-btn {
-  transform: translate(-50%, -120%) scale(0);
+  transform: translate(-50%, calc(-100% - 20px)) scale(0);
 }
 .add-todo-btn__shadow {
   z-index: -1;
