@@ -48,7 +48,7 @@ export function deleteTodo() {
         if (startPosition - currentPosition > 20 && toggleOfVerticalScroll === false) {
           mainTodo[mainCount].style.transform = `translateX(-${startPosition - currentPosition - 20}px)`
         }
-        if (startPosition - currentPosition > 100 && toggleOfVerticalScroll === false) {
+        if (startPosition - currentPosition > 200 && toggleOfVerticalScroll === false) {
           mainTodo[mainCount].style.background = '#F76B72AA'
         } else {
           mainTodo[mainCount].style.background = '#212D3B'
@@ -72,7 +72,7 @@ export function deleteTodo() {
       }
 
       function CheckAction() {
-        if (startPosition - currentPosition > 100) {
+        if (startPosition - currentPosition > 200) {
           mainTodo[mainCount].style.transform = `translateX(-100%)`
           mainTodo[mainCount].style.opacity = '0'
           for (let afterTodo=mainCount+1; afterTodo<mainTodo.length; afterTodo++) {
@@ -141,7 +141,7 @@ export function deleteTodo() {
         if (startPosition - currentPosition > 20 && toggleOfVerticalScroll === false) {
           completedTodo[completedCount].style.transform = `translateX(-${startPosition - currentPosition - 20}px)`
         }
-        if (startPosition - currentPosition > 100 && toggleOfVerticalScroll === false) {
+        if (startPosition - currentPosition > 200 && toggleOfVerticalScroll === false) {
           completedTodo[completedCount].style.background = '#F76B72AA'
         } else {
           completedTodo[completedCount].style.background = '#212D3B'
@@ -165,7 +165,7 @@ export function deleteTodo() {
       }
 
       function CheckAction() {
-        if (startPosition - currentPosition > 100) {
+        if (startPosition - currentPosition > 200) {
           completedTodo[completedCount].style.transform = `translateX(-100%)`
           completedTodo[completedCount].style.opacity = '0'
           for (let afterTodo=completedCount+1; afterTodo<completedTodo.length; afterTodo++) {
