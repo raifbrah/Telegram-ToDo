@@ -1,6 +1,6 @@
 [{
         "relation": ["delegate_permission/common.handle_all_urls"],
         "target" : { "namespace": "android_app", "package_name": "com.raifbrah.telegramtodo",
-                     "sha256_cert_fingerprints": ["E4:D2:13:93:DC:74:8B:5A:8A:FD:D0:3E:8A:1D:E6:60:22:26:0F:B1:29:EB:A9:3E:84:A6:1E:8B:6A:77:E7:8A"] }
+                     "sha256_cert_fingerprints": ["06:E4:72:33:0A:64:64:88:25:5E:B0:7D:44:53:AB:2A:C7:51:A8:93:E9:D2:DD:CE:1B:0A:EE:3A:00:9A:D4:87"] }
       }
 ]
