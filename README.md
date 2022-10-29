@@ -11,3 +11,6 @@
 ## Ссылки на приложение:
 * <a href="https://raifbrah.github.io/Telegram-ToDo/">Web Version</a> <br>
 * <a href="https://play.google.com/store/apps/details?id=com.raifbrah.telegramtodo">Play Market</a>
+
+## Copyright
+©2022 Raif Yarullin
