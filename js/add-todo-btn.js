@@ -20,3 +20,11 @@ addTodoBtn.onclick = () => {
 addTodoBtn__shadow.onclick = () => {
   history.back()
 }
+
+
+export function addTodoBtn_open() {
+  addTodoBtn.style.transform = 'translate(-50%, calc(-100% - 20px))'
+}
+export function addTodoBtn_close() {
+  addTodoBtn.style.transform = 'translate(-50%, 1px)'
+}

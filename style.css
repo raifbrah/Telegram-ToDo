@@ -235,7 +235,7 @@ input[name="category__radio"]:checked + .category:before {
 .add-category-window {
   z-index: 1000;
   position: fixed;
-  top: 101%;
+  top: calc(100% + 1px);
   left: 50vw;
   display: flex;
   flex-direction: column;
@@ -248,7 +248,6 @@ input[name="category__radio"]:checked + .category:before {
   box-shadow: 0 2px 5px #0002;
   
   animation-fill-mode: forwards;
-  transition: .33s;
 }
 .add-category-window__title {
   color: #fff;
@@ -363,7 +362,7 @@ input[name="category__radio"]:checked + .category:before {
 .rename-lists-window {
   z-index: 1000;
   position: fixed;
-  top: 101vh;
+  top: calc(100% + 1px);
   left: 50vw;
   display: flex;
   flex-direction: column;
@@ -376,7 +375,6 @@ input[name="category__radio"]:checked + .category:before {
   box-shadow: 0 2px 5px #0002;
   
   animation-fill-mode: forwards;
-  transition: .33s;
 }
 .rename-lists-window__title {
   color: #fff;
@@ -597,7 +595,7 @@ input[name="category__radio"]:checked + .category:before {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 100vh;
+  top: 100%;
   left: 50vw;
   width: 57px;
   height: 57px;
@@ -627,9 +625,6 @@ input[name="category__radio"]:checked + .category:before {
 }
 .add-todo-btn__checkbox {
   display: none;
-}
-.add-todo-btn__checkbox:checked + .add-todo-btn {
-  transform: translate(-50%, calc(-100% - 20px)) scale(0);
 }
 .add-todo-btn__shadow {
   z-index: -1;
@@ -790,33 +785,6 @@ input[name="category__radio"]:checked + .category:before {
 /* KEYFRAMES
 =============*/
 
-@keyframes add-category-window_open-anim {
-  0% {
-    transform: translate(-50%, 0);
-  }
-  33% {
-    transform: translate(-50%, -55%);
-  }
-  60% {
-    transform: translate(-50%, -48.5%);
-  }
-  90% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
-
-@keyframes add-category-window_close-anim {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, 0%);
-  }
-}
-
 
 @keyframes addTodoWindow_open {
   0% {
@@ -868,6 +836,7 @@ input[name="category__radio"]:checked + .category:before {
     transform: translate(-50%, calc(100% + 25px));
   }
 }
+
 @keyframes confirm-window_shaking {
   0% {
     transform: translate(-50%, 0%);
@@ -886,53 +855,6 @@ input[name="category__radio"]:checked + .category:before {
   }
   100% {
     transform: translate(-50%, 0%);
-  }
-}
-
-
-@keyframes rename-lists-window_open-anim {
-  0% {
-    transform: translate(-50%, 0);
-  }
-  33% {
-    transform: translate(-50%, -55%);
-  }
-  60% {
-    transform: translate(-50%, -48.5%);
-  }
-  90% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
-@keyframes rename-lists-window_close-anim {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    transform: translate(-50%, 0%);
-  }
-}
-@keyframes rename-lists-window_shaking {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-  10% {
-    transform: translate(-52%, -50%);
-  }
-  35% {
-    transform: translate(-48%, -50%);
-  }
-  60% {
-    transform: translate(-50.5%, -50%);
-  }
-  85% {
-    transform: translate(-49.5%, -50%);
-  }
-  100% {
-    transform: translate(-50%, -50%);
   }
 }
 

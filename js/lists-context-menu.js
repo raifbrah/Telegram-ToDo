@@ -6,6 +6,9 @@ import * as localStorageJS from './saves/localStorage.js'
 callingTheMenu()
 
 
+const wrapper = document.querySelector('.wrapper')
+
+
 let hold = false
 let toggleOfOpen__renameWindow = false
 let toggleOfOpen__confirmWindow = false
@@ -70,8 +73,6 @@ export function close() {
   const listsContextMenu__shadowBg = document.querySelector('.lists-context-menu__shadow-bg')
   const confirmWindow = document.querySelector('.confirm-window')
 
-  window.removeEventListener('resize', renameListsWindow_changeTop)
-
   if (toggleOfOpen__renameWindow === false && toggleOfOpen__confirmWindow === false) {
     const listsContextMenu = document.querySelector('.lists-context-menu')
     listsContextMenu.style.animationDuration = '.15s'
@@ -79,14 +80,10 @@ export function close() {
   } else if (toggleOfOpen__renameWindow === true) {
     toggleOfOpen__renameWindow = false
     
-    renameListsWindow.style.transition = '.15s'
     renameListsWindow.style.animationDuration = '.15s'
-    renameListsWindow.style.animationName = 'rename-lists-window_close-anim'
-    if (window.innerHeight > window.innerWidth) {
-      renameListsWindow.style.top = `${window.screen.height}px`
-    } else {
-      renameListsWindow.style.top = `${window.screen.width}px`
-    }
+    renameListsWindow.style.animationName = 'add-category-window_close-anim'
+    renameListsWindow.style.transform = 'translate(-50%, 0%)'
+    window.removeEventListener('resize', renameWindow_centerY)
   } else if (toggleOfOpen__confirmWindow === true) {
     toggleOfOpen__confirmWindow = false
 
@@ -96,11 +93,6 @@ export function close() {
   listsContextMenu__shadowBg.style.zIndex = '-1'
   listsContextMenu__shadowBg.style.opacity = '0'
   listsContextMenu__shadowBg.style.pointerEvents = 'none'
-
-  setTimeout(() => {
-    renameListsWindow.style.transition = '0s'
-    renameListsWindow.style.top = '101vh'
-  }, 150)
 }
 
 function openRenameWindow(listNum) {
@@ -110,17 +102,26 @@ function openRenameWindow(listNum) {
   const category = document.querySelectorAll('.category')
   const renameListsWindow__input = document.querySelector('.rename-lists-window__input')
   const listsContextMenu = document.querySelector('.lists-context-menu')
+  const listsContextMenu__shadowBg = document.querySelector('.lists-context-menu__shadow-bg')
 
-  window.addEventListener('resize', renameListsWindow_changeTop)
+  const listsContextMenu_transition = 900
 
   listsContextMenu.style.animationDuration = '.15s'
   listsContextMenu.style.animationName = 'lists-context-menu_close'
 
   setTimeout(() => {
-    renameListsWindow.style.transition = '.33s'
-    renameListsWindow.style.animationDuration = '.9s'
-    renameListsWindow.style.animationName = 'rename-lists-window_open-anim'
-    renameListsWindow_changeTop()
+    wrapper.style.pointerEvents = 'none'
+    renameListsWindow.style.pointerEvents = 'none'
+    listsContextMenu__shadowBg.style.pointerEvents = 'none'
+
+    renameListsWindow.style.animationDuration = `${listsContextMenu_transition}ms`
+    renameListsWindow.style.animationName = 'add-category-window_open-anim'
+
+    setTimeout(() => {
+      wrapper.style.pointerEvents = 'auto'
+      renameListsWindow.style.pointerEvents = 'auto'
+      listsContextMenu__shadowBg.style.pointerEvents = 'auto'
+    }, listsContextMenu_transition)
   }, 150)
 
 
@@ -140,7 +141,9 @@ function openRenameWindow(listNum) {
 
       renameListsWindow.style.animationDuration = '.4s'
       renameListsWindow.style.animationName = 'rename-lists-window_shaking'
-      renameListsWindow.style.transform = 'translate(-50%, -50%)'
+      renameWindow_centerY()
+      window.addEventListener('resize', renameWindow_centerY)
+
       setTimeout(() => {
         renameListsWindow.style.animationName = 'none'
         wrapper.style.pointerEvents = 'auto'
@@ -161,28 +164,24 @@ export function openRenameWindow_back() {
 
   toggleOfOpen__renameWindow = false
   
-  window.removeEventListener('resize', renameListsWindow_changeTop)
-  renameListsWindow.style.transition = '.15s'
   renameListsWindow.style.animationDuration = '.15s'
-  renameListsWindow.style.animationName = 'rename-lists-window_close-anim'
-  if (window.innerHeight > window.innerWidth) {
-    renameListsWindow.style.top = `${window.screen.height}px`
-  } else {
-    renameListsWindow.style.top = `${window.screen.width}px`
-  }
+  renameListsWindow.style.animationName = 'add-category-window_close-anim'
 
   setTimeout(() => {
-    renameListsWindow.style.transition = 'none'
-    renameListsWindow.style.top = '101vh'
     listsContextMenu.style.animationDuration = '.7s'
     listsContextMenu.style.animationName = 'lists-context-menu_open'
+
+    renameListsWindow.style.transform = `translate(-50%, 0%)`
+    window.removeEventListener('resize', renameWindow_centerY)
   }, 150)
 }
 
-function renameListsWindow_changeTop() {
+function renameWindow_centerY() {
   const renameListsWindow = document.querySelector('.rename-lists-window')
-  renameListsWindow.style.top = `${window.innerHeight / 2}px`
+  renameListsWindow.style.transform = `translate(-50%, calc(-${window.innerHeight / 2}px + -50%))`
 }
+
+
 
 function openConfirmWindow(listNum) {
   const listsContextMenu = document.querySelector('.lists-context-menu')

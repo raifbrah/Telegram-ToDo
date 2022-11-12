@@ -14,6 +14,7 @@ let addCategoryWindow__confirm = document.querySelector('.add-category-window__c
 let addCategoryWindow__shadowBg = document.querySelector('.add-category-window__shadow-bg')
 
 const listsSlider__con = document.querySelector('.lists-slider__con')
+const wrapper = document.querySelector('.wrapper')
 
 let categoryRadios = document.querySelectorAll('.category__radio')
 
@@ -27,17 +28,24 @@ function open() {
   addCategoryWindow__confirm = document.querySelector('.add-category-window__confirm')
   addCategoryWindow__shadowBg = document.querySelector('.add-category-window__shadow-bg')
 
-    var addCatWindow_transition = 900
-    
-    addCategoryWindow__input.value = ''
-    addCategoryWindow.style.animationDuration = `${addCatWindow_transition}ms`
-    addCategoryWindow.style.transition = `${addCatWindow_transition / 3}ms`
-    addCategoryWindow.style.top = `${window.innerHeight / 2}px`
-    addCategoryWindow.style.animationName = 'add-category-window_open-anim'
-    addCategoryWindow__shadowBg.style.transition = `${addCatWindow_transition / 3}ms`
-    addCategoryWindow__shadowBg.style.zIndex = '999'
-    addCategoryWindow__shadowBg.style.opacity = '.6'
+  wrapper.style.pointerEvents = 'none'
+  addCategoryWindow__shadowBg.style.pointerEvents = 'none'
+  addCategoryWindow.style.pointerEvents = 'none'
+
+  const addCatWindow_transition = 900
+  
+  addCategoryWindow__input.value = ''
+  addCategoryWindow.style.animationDuration = `${addCatWindow_transition}ms`
+  addCategoryWindow.style.animationName = 'add-category-window_open-anim'
+  addCategoryWindow__shadowBg.style.transition = `${addCatWindow_transition / 3}ms`
+  addCategoryWindow__shadowBg.style.zIndex = '999'
+  addCategoryWindow__shadowBg.style.opacity = '.6'
+
+  setTimeout(() => {
+    wrapper.style.pointerEvents = 'auto'
     addCategoryWindow__shadowBg.style.pointerEvents = 'auto'
+    addCategoryWindow.style.pointerEvents = 'auto'
+  }, addCatWindow_transition)
 }
 
 export function close() {
@@ -55,11 +63,10 @@ export function close() {
   }, 150)
   
   addCategoryWindow.style.animationDuration = addCatWindow_transition
-  addCategoryWindow.style.transition = addCatWindow_transition
-
-  addCategoryWindow.style.top = `101%`
-
   addCategoryWindow.style.animationName = 'add-category-window_close-anim'
+  addCategoryWindow.style.transform = 'translate(-50%, 0%)'
+  window.removeEventListener('resize', addCategoryWindow_centerY)
+
   addCategoryWindow__shadowBg.style.transition = addCatWindow_transition
   addCategoryWindow__shadowBg.style.zIndex = '-1'
   addCategoryWindow__shadowBg.style.opacity = '0'
@@ -119,7 +126,9 @@ function add() {
 
     addCategoryWindow.style.animationDuration = '.4s'
     addCategoryWindow.style.animationName = 'rename-lists-window_shaking'
-    addCategoryWindow.style.transform = 'translate(-50%, -50%)'
+    addCategoryWindow_centerY()
+    window.addEventListener('resize', addCategoryWindow_centerY)
+
     setTimeout(() => {
       addCategoryWindow.style.animationName = 'none'
       wrapper.style.pointerEvents = 'auto'
@@ -128,6 +137,12 @@ function add() {
     }, 400)
   }
 }
+
+function addCategoryWindow_centerY() {
+  addCategoryWindow = document.querySelector('.add-category-window')
+  addCategoryWindow.style.transform = `translate(-50%, calc(-${window.innerHeight / 2}px + -50%))`
+}
+
 
 export function categoriesBtnsOnClick() {
   addListBtn = document.querySelector('.add-list-btn')

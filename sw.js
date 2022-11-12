@@ -8,6 +8,7 @@ const assetUrls = [
   './manifest.json',
   './app.js',
   './sw.js',
+  './js/custom-styles.js',
   './js/add-todo-btn.js',
   './js/add-todo-window.js',
   './js/categories.js',
