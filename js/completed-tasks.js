@@ -5,6 +5,7 @@ import * as localStorageJS from './saves/localStorage.js'
 
 complete()
 uncomplete()
+open_close()
 
 export function complete() {
   const category__radio = document.querySelectorAll('.category__radio')
@@ -192,8 +193,6 @@ export function open_close() {
     }
   }
 }
-
-open_close()
 
 
 export function check__openClose() {
