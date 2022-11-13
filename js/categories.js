@@ -45,7 +45,7 @@ function open() {
     wrapper.style.pointerEvents = 'auto'
     addCategoryWindow__shadowBg.style.pointerEvents = 'auto'
     addCategoryWindow.style.pointerEvents = 'auto'
-  }, addCatWindow_transition)
+  }, addCatWindow_transition / 3)
 }
 
 export function close() {
@@ -58,9 +58,6 @@ export function close() {
 
 
   const addCatWindow_transition = '.15s'
-  setTimeout(() => {
-    addCategoryWindow.style.transition = '0s'
-  }, 150)
   
   addCategoryWindow.style.animationDuration = addCatWindow_transition
   addCategoryWindow.style.animationName = 'add-category-window_close-anim'

@@ -11,7 +11,6 @@ function addCustomStyles() {
   ADDCategoryWindow_closeAnim()
   RENAMEListsWindow_shaking()
 }
-
 addCustomStyles()
 
 
@@ -21,14 +20,11 @@ function ADDCategoryWindow_openAnim() {
       0% {
         transform: translate(-50%, 0);
       }
-      33% {
+      40% {
         transform: translate(-50%, calc(-${window.innerHeight / 2}px + -55%));
       }
-      60% {
+      66% {
         transform: translate(-50%, calc(-${window.innerHeight / 2}px + -48.5%));
-      }
-      90% {
-        transform: translate(-50%, calc(-${window.innerHeight / 2}px + -50%));
       }
       100% {
         transform: translate(-50%, calc(-${window.innerHeight / 2}px + -50%));

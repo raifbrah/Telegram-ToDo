@@ -104,7 +104,7 @@ function openRenameWindow(listNum) {
   const listsContextMenu = document.querySelector('.lists-context-menu')
   const listsContextMenu__shadowBg = document.querySelector('.lists-context-menu__shadow-bg')
 
-  const listsContextMenu_transition = 900
+  const openRenameWindow_transition = 900
 
   listsContextMenu.style.animationDuration = '.15s'
   listsContextMenu.style.animationName = 'lists-context-menu_close'
@@ -114,14 +114,14 @@ function openRenameWindow(listNum) {
     renameListsWindow.style.pointerEvents = 'none'
     listsContextMenu__shadowBg.style.pointerEvents = 'none'
 
-    renameListsWindow.style.animationDuration = `${listsContextMenu_transition}ms`
+    renameListsWindow.style.animationDuration = `${openRenameWindow_transition}ms`
     renameListsWindow.style.animationName = 'add-category-window_open-anim'
 
     setTimeout(() => {
       wrapper.style.pointerEvents = 'auto'
       renameListsWindow.style.pointerEvents = 'auto'
       listsContextMenu__shadowBg.style.pointerEvents = 'auto'
-    }, listsContextMenu_transition)
+    }, openRenameWindow_transition / 3)
   }, 150)
 
 
