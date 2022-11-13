@@ -20,7 +20,7 @@ function ADDCategoryWindow_openAnim() {
       0% {
         transform: translate(-50%, 0);
       }
-      40% {
+      37% {
         transform: translate(-50%, calc(-${window.innerHeight / 2}px + -55%));
       }
       66% {
