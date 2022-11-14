@@ -21,7 +21,7 @@ export function callingTheMenu() {
   const renameListsWindow__input = document.querySelector('.rename-lists-window__input')
 
   for (let i=0; i<category.length - 1; i++) {
-    category[i].ontouchstart = (e) => {
+    category[i].addEventListener('touchstart', (e) => {
       hold = true
       setTimeout(() => {
         if (hold === true) {
@@ -37,16 +37,16 @@ export function callingTheMenu() {
           }
           renameListsWindow__input.value = category[i].innerText
         }
-      }, 300)
-    }
+      }, 500)
+    }, {passive: true})
     
-    category[i].ontouchmove = (e) => {
+    category[i].addEventListener('touchmove', (e) => {
       hold = false
-    }
+    }, {passive: true})
 
-    category[i].ontouchend = (e) => {
+    category[i].addEventListener('touchend', (e) => {
       hold = false
-    }
+    })
   }
 }
 

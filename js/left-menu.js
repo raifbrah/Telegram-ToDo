@@ -8,8 +8,8 @@ const burgerBtn = document.querySelector('.burger-btn')
 
 
 
-leftMenu.addEventListener('touchstart', (e) => TouchStart(e))
-leftMenu.addEventListener('touchmove', (e) => TouchMove(e))
+leftMenu.addEventListener('touchstart', (e) => TouchStart(e), {passive: true})
+leftMenu.addEventListener('touchmove', (e) => TouchMove(e), {passive: true})
 leftMenu.addEventListener('touchend', (e) => TouchEnd(e))
 
 burgerBtn.onclick = () => {
