@@ -220,7 +220,7 @@ input[name="category__radio"]:checked + .category:before {
 
 
 .add-category-window__shadow-bg {
-  z-index: -1;
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -321,7 +321,7 @@ input[name="category__radio"]:checked + .category:before {
   transition: .33s;
 }
 .lists-context-menu__shadow-bg {
-  z-index: -1;
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -331,7 +331,7 @@ input[name="category__radio"]:checked + .category:before {
   opacity: 0;
   pointer-events: none;
 
-  transition: .2s;
+  transition: .15s;
 }
 .lists-context-menu__btn {
   display: flex;

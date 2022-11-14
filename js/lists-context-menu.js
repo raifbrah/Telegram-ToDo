@@ -54,7 +54,6 @@ function open() {
   const listsContextMenu = document.querySelector('.lists-context-menu')
   const listsContextMenu__shadowBg = document.querySelector('.lists-context-menu__shadow-bg')
 
-  listsContextMenu__shadowBg.style.zIndex = '999'
   listsContextMenu__shadowBg.style.opacity = '.6'
   listsContextMenu__shadowBg.style.pointerEvents = 'auto'
 
@@ -73,6 +72,9 @@ export function close() {
   const listsContextMenu__shadowBg = document.querySelector('.lists-context-menu__shadow-bg')
   const confirmWindow = document.querySelector('.confirm-window')
 
+  listsContextMenu__shadowBg.style.opacity = '0'
+  listsContextMenu__shadowBg.style.pointerEvents = 'none'
+
   if (toggleOfOpen__renameWindow === false && toggleOfOpen__confirmWindow === false) {
     const listsContextMenu = document.querySelector('.lists-context-menu')
     listsContextMenu.style.animationDuration = '.15s'
@@ -90,9 +92,6 @@ export function close() {
     confirmWindow.style.animationDuration = '.15s'
     confirmWindow.style.animationName = 'lists-context-menu_close'
   }
-  listsContextMenu__shadowBg.style.zIndex = '-1'
-  listsContextMenu__shadowBg.style.opacity = '0'
-  listsContextMenu__shadowBg.style.pointerEvents = 'none'
 }
 
 function openRenameWindow(listNum) {

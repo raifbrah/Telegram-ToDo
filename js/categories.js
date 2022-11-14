@@ -20,6 +20,9 @@ let categoryRadios = document.querySelectorAll('.category__radio')
 
 
 
+
+
+
 function open() {
   addListBtn = document.querySelector('.add-list-btn')
   addCategoryWindow = document.querySelector('.add-category-window')
@@ -33,12 +36,11 @@ function open() {
   addCategoryWindow.style.pointerEvents = 'none'
 
   const addCatWindow_transition = 900
-  
+
   addCategoryWindow__input.value = ''
   addCategoryWindow.style.animationDuration = `${addCatWindow_transition}ms`
   addCategoryWindow.style.animationName = 'add-category-window_open-anim'
   addCategoryWindow__shadowBg.style.transition = `${addCatWindow_transition / 3}ms`
-  addCategoryWindow__shadowBg.style.zIndex = '999'
   addCategoryWindow__shadowBg.style.opacity = '.6'
 
   setTimeout(() => {
@@ -56,18 +58,17 @@ export function close() {
   addCategoryWindow__confirm = document.querySelector('.add-category-window__confirm')
   addCategoryWindow__shadowBg = document.querySelector('.add-category-window__shadow-bg')
 
+  const addCatWindow_transition = 150
 
-  const addCatWindow_transition = '.15s'
+  addCategoryWindow__shadowBg.style.pointerEvents = 'none' 
   
-  addCategoryWindow.style.animationDuration = addCatWindow_transition
+  addCategoryWindow.style.animationDuration = `${addCatWindow_transition}ms`
   addCategoryWindow.style.animationName = 'add-category-window_close-anim'
   addCategoryWindow.style.transform = 'translate(-50%, 0%)'
   window.removeEventListener('resize', addCategoryWindow_centerY)
 
-  addCategoryWindow__shadowBg.style.transition = addCatWindow_transition
-  addCategoryWindow__shadowBg.style.zIndex = '-1'
+  addCategoryWindow__shadowBg.style.transition = `${addCatWindow_transition}ms`
   addCategoryWindow__shadowBg.style.opacity = '0'
-  addCategoryWindow__shadowBg.style.pointerEvents = 'none' 
 }
 
 function add() {
