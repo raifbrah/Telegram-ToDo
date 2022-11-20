@@ -37,7 +37,7 @@ export function callingTheMenu() {
           }
           renameListsWindow__input.value = category[i].innerText
         }
-      }, 500)
+      }, 300)
     }, {passive: true})
     
     category[i].addEventListener('touchmove', (e) => {
