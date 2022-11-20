@@ -12,7 +12,7 @@
 * <a href="https://raifbrah.github.io/Telegram-ToDo/">Web Version</a> <br>
 * <a href="https://play.google.com/store/apps/details?id=com.raifbrah.telegramtodo">Play Market</a>
 
-## Дальейшие планы:
+## Дальнейшие планы:
 - [ ] Управление клавиатурой
 - [ ] Обучение при первом запуске приложения (повторно можно будет запустить через боковое меню)
 - [ ] Переключение темной/светлой темы
