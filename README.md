@@ -1,4 +1,4 @@
-<h1 align="center">Telegram Todo :ballot_box_with_check:</h1>
+<h1 align="center">Telegram ToDo :ballot_box_with_check:</h1>
 
 ![Картинка для описания](https://user-images.githubusercontent.com/80786334/198723703-58fe25c9-c997-4ca5-be30-59cd6adb4285.png)
 
